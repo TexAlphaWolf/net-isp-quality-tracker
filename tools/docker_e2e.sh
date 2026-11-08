@@ -16,6 +16,7 @@ docker run -d --name "$SRV" --network "$NET" --entrypoint python "$IMAGE" -m htt
 sleep 2
 
 CONF="$(mktemp)"
+chmod 644 "$CONF"   # mktemp makes it 0600; the container user is not the runner user
 cat > "$CONF" <<TOML
 interval = 5
 database = "/data/ispq.db"
