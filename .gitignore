@@ -22,3 +22,4 @@ htmlcov/
 *.egg-info/
 dist/
 build/
+fail.txt

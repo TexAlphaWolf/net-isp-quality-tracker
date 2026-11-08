@@ -158,7 +158,8 @@ def test_dns_nothing_listening() -> None:
     port = s.getsockname()[1]
     s.close()
     r = probes.dns_probe(DnsTarget("d", "127.0.0.1", "example.com", port, count=2, timeout=0.5, gap=0))
-    assert r.ok == 0 and r.error in {"refused", "timeout", "connection reset"}  # Windows reports ICMP unreachable as a reset
+    # Windows reports an ICMP "port unreachable" as a connection reset
+    assert r.ok == 0 and r.error in {"refused", "timeout", "connection reset"}
 
 
 def test_dns_bad_inputs() -> None:
