@@ -1,0 +1,196 @@
+{
+  "version": "1.0.0",
+  "python": "3.13.16",
+  "machine": "Linux x86_64",
+  "quick": false,
+  "probes": {
+    "dns_latency": [
+      {
+        "injected_ms": 0,
+        "queries": 40,
+        "answered": 40,
+        "median_measured_ms": 0.25,
+        "median_error_ms": 0.25,
+        "max_error_ms": 0.73
+      },
+      {
+        "injected_ms": 10,
+        "queries": 40,
+        "answered": 40,
+        "median_measured_ms": 10.62,
+        "median_error_ms": 0.62,
+        "max_error_ms": 2.39
+      },
+      {
+        "injected_ms": 25,
+        "queries": 40,
+        "answered": 40,
+        "median_measured_ms": 25.76,
+        "median_error_ms": 0.76,
+        "max_error_ms": 1.01
+      },
+      {
+        "injected_ms": 50,
+        "queries": 40,
+        "answered": 40,
+        "median_measured_ms": 50.87,
+        "median_error_ms": 0.87,
+        "max_error_ms": 1.27
+      },
+      {
+        "injected_ms": 100,
+        "queries": 40,
+        "answered": 40,
+        "median_measured_ms": 100.84,
+        "median_error_ms": 0.84,
+        "max_error_ms": 2.55
+      },
+      {
+        "injected_ms": 200,
+        "queries": 40,
+        "answered": 40,
+        "median_measured_ms": 200.95,
+        "median_error_ms": 0.95,
+        "max_error_ms": 3.04
+      }
+    ],
+    "dns_loss": [
+      {
+        "nominal_loss_pct": 0.0,
+        "queries": 400,
+        "dropped_by_server": 0,
+        "reported_lost": 0,
+        "reported_loss_pct": 0.0
+      },
+      {
+        "nominal_loss_pct": 5.0,
+        "queries": 400,
+        "dropped_by_server": 17,
+        "reported_lost": 17,
+        "reported_loss_pct": 4.25
+      },
+      {
+        "nominal_loss_pct": 20.0,
+        "queries": 400,
+        "dropped_by_server": 72,
+        "reported_lost": 72,
+        "reported_loss_pct": 18.0
+      },
+      {
+        "nominal_loss_pct": 50.0,
+        "queries": 400,
+        "dropped_by_server": 197,
+        "reported_lost": 197,
+        "reported_loss_pct": 49.25
+      }
+    ],
+    "http_ttfb": [
+      {
+        "injected_ms": 0,
+        "median_ttfb_ms": 0.65,
+        "median_error_ms": 0.65
+      },
+      {
+        "injected_ms": 50,
+        "median_ttfb_ms": 51.55,
+        "median_error_ms": 1.55
+      },
+      {
+        "injected_ms": 200,
+        "median_ttfb_ms": 201.59,
+        "median_error_ms": 1.59
+      }
+    ],
+    "http_bandwidth": [
+      {
+        "offered_mbps": 1,
+        "median_measured_mbps": 0.99,
+        "error_pct": -1.4,
+        "downloads": 6
+      },
+      {
+        "offered_mbps": 5,
+        "median_measured_mbps": 4.97,
+        "error_pct": -0.56,
+        "downloads": 6
+      },
+      {
+        "offered_mbps": 20,
+        "median_measured_mbps": 20.1,
+        "error_pct": 0.51,
+        "downloads": 6
+      },
+      {
+        "offered_mbps": 50,
+        "median_measured_mbps": 50.34,
+        "error_pct": 0.69,
+        "downloads": 6
+      }
+    ],
+    "tcp_loopback": {
+      "attempts": 200,
+      "ok": 200,
+      "median_ms": 0.022,
+      "p99_ms": 0.134,
+      "closed_port_ok": 0,
+      "closed_port_error": "refused"
+    }
+  },
+  "analysis": {
+    "simulated_months": 200,
+    "outage_detection": {
+      "injected_clean_outages": 1110,
+      "detected_once": 1110,
+      "recall_pct": 100.0,
+      "detected_total": 1235,
+      "false_outages": 0,
+      "start_error_s_min_max": [
+        0.0,
+        60.1
+      ],
+      "duration_error_s_min_max": [
+        -58.1,
+        60.2
+      ],
+      "interval_s": 60
+    },
+    "outages_interrupted_by_missing_data": {
+      "injected": 72,
+      "ispq_outages_that_span_missing_data": 0,
+      "outages_cut_at_the_gap": 62,
+      "naive_outages_that_span_missing_data": 62
+    },
+    "availability_error_points": {
+      "ispq_mean": 0.0086,
+      "ispq_max": 0.0707,
+      "naive_missing_counts_as_down_mean": 0.5608,
+      "naive_max": 1.7643
+    },
+    "percentiles": {
+      "true_p95_ms": 38.62,
+      "from_all_samples_ms": 38.6,
+      "from_round_averages_ms": 28.87,
+      "error_all_samples_pct": -0.05,
+      "error_round_averages_pct": -25.24,
+      "samples": 100000
+    }
+  },
+  "cost": {
+    "write_one_cycle_ms": 1.308,
+    "database": {
+      "months": 12,
+      "rows": 2073600,
+      "bytes": 195198976,
+      "mb_per_month": 16.3,
+      "build_seconds": 20.4
+    },
+    "report": {
+      "one_month_seconds": 1.81,
+      "one_month_cycles": 44640,
+      "html_render_seconds": 0.585,
+      "whole_database_months": 12,
+      "whole_database_seconds": 23.48,
+      "whole_database_cycles": 518400
+    }
+  }
+}

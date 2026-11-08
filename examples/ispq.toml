@@ -1,0 +1,30 @@
+# ispq: what to measure. Times are in seconds.
+interval = 60
+database = "ispq.db"
+
+[[tcp]]
+name = "cloudflare"
+host = "1.1.1.1"
+port = 443
+
+[[tcp]]
+name = "google"
+host = "8.8.8.8"
+port = 53
+
+[[tcp]]
+name = "quad9"
+host = "9.9.9.9"
+port = 443
+
+[[dns]]
+name = "dns-cloudflare"
+server = "1.1.1.1"
+query = "example.com"
+
+# Opt-in: download speed. It uses data, so it runs only every 60th cycle (hourly).
+# [[http]]
+# name = "speed"
+# url = "https://speed.example.net/10MB.bin"
+# bandwidth = true
+# every = 60
